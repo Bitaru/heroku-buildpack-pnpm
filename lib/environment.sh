@@ -25,7 +25,8 @@ create_default_env() {
   export NODE_MODULES_CACHE=${NODE_MODULES_CACHE:-true}
   export NODE_ENV=${NODE_ENV:-production}
   export NODE_VERBOSE=${NODE_VERBOSE:-false}
-
+  export SENTRYCLI_USE_LOCAL=1
+ 
   if $YARN; then
     export USE_YARN_CACHE=${USE_YARN_CACHE:-true}
   fi
