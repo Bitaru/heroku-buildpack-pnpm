@@ -146,6 +146,7 @@ pnpm_node_modules() {
 
   echo "Installing node modules (pnpm-lock.yaml)"
   cd "$build_dir" || return
+  monitor "pnpm-set-cache-dir" pnpm config set store-dir ~/.pnpm-store
   monitor "pnpm-install" pnpm install
 }
 
