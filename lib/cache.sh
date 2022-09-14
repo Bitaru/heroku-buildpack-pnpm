@@ -91,6 +91,7 @@ restore_custom_cache_directories() {
         echo "- $cachepath"
         mkdir -p "$(dirname "$build_dir/$cachepath")"
         mv "$cache_dir/node/cache/$cachepath" "$build_dir/$cachepath"
+        chmod -R g+w "$build_dir/$cachepath"
       else
         echo "- $cachepath (not cached - skipping)"
       fi
