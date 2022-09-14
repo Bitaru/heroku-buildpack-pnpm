@@ -223,8 +223,9 @@ install_bins() {
   if $PNPM; then
     meta_set "build-step" "install-pnpm"
     echo "-----> Install pnpm"
-    curl -sL https://unpkg.com/@pnpm/self-installer | node
-    pnpm config set store-dir "$CACHE_DIR"/.pnpm-store
+    echo $BUILD_DIR
+    corepack enable && corepack prepare pnpm@7.11.0 --activate
+    pnpm config set store-dir "$BUILD_DIR"/.pnpm-store
   fi
 
   # Download yarn if there is a yarn.lock file or if the user
