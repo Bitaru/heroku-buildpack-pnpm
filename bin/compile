@@ -224,7 +224,7 @@ install_bins() {
     meta_set "build-step" "install-pnpm"
     echo "-----> Install pnpm"
     echo $BUILD_DIR
-    corepack enable && corepack prepare pnpm@7.11.0 --activate
+    corepack enable && corepack prepare pnpm@$PNPM_VERSION --activate
     pnpm config set store-dir "$BUILD_DIR"/.pnpm-store
   fi
 
